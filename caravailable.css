@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('IMAGES/Cars\ Available\ Page.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: fadeIn 2s ease-in;
+
+  animation: bgMove 18s ease-in-out infinite alternate;
+  color: #fff;
+}
+
+/* Background Smooth Move Animation */
+@keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+/* Header SAME AS BOOKING PAGE */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #003366, #0059b3);
+  padding: 15px 60px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo::before { content: '🚗'; font-size: 24px; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+.btn-login {
+  background-color: #ffd700;
+  color: #0f4c81;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.cars-section {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.cars-section h1 {
+  color: yellow;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.cars-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.car-box {
+  background: aqua;
+  width: 260px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.car-box:hover {
+  transform: translateY(-5px);
+}
+
+.car-box img {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.car-box h3 {
+  color: #0f4c81;
+  margin-bottom: 5px;
+}
+
+.car-box p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.btn {
+  background-color: yellow;
+  color: darkblue;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
