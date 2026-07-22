@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* ===== Shared Site Header / Footer (matches home.php / booking.php) ===== */
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #003366, #0059b3);
+  padding: 15px 60px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header.site-header .logo {
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header.site-header .logo::before {
+  content: '🚗';
+  font-size: 24px;
+}
+
+header.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+header.site-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header.site-header nav ul li a:hover {
+  color: #ffd700;
+}
+
+.admin-hero {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  width: 100%;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background-image: url('../IMAGES/Login Page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.site-footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* ===== Login / Setup Boxes ===== */
+.admin-login-box {
+  width: 340px;
+  background: darkcyan;
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  animation: fadeIn 1.2s ease;
+  text-align: center;
+}
+
+.admin-login-box h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.admin-login-box .input-box {
+  margin-bottom: 16px;
+}
+
+.admin-login-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.admin-login-box .btn,
+.btn {
+  background: linear-gradient(90deg, #003366, #0059b3);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffd700;
+  color: #003366;
+}
+
+.btn-secondary {
+  background: #888;
+}
+
+.back-link {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.back-link a {
+  color: Yellow;
+}
+
+p.msg, p.error {
+  background: #fff3cd;
+  color: #7a5a00;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* ===== Admin Layout ===== */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #003366, #0059b3);
+  color: white;
+  padding: 25px 0;
+  flex-shrink: 0;
+}
+
+.admin-logo {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+
+.admin-sidebar nav ul {
+  list-style: none;
+}
+
+.admin-sidebar nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 25px;
+  font-weight: 500;
+  transition: 0.25s;
+  border-left: 4px solid transparent;
+}
+
+.admin-sidebar nav ul li a:hover,
+.admin-sidebar nav ul li a.active {
+  background: rgba(255,255,255,0.12);
+  border-left: 4px solid #ffd700;
+}
+
+.admin-sidebar .btn-logout {
+  color: #ffd0d0;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 35px 45px;
+}
+
+.admin-main h1 {
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.welcome {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* ===== Dashboard Stats ===== */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+  font-size: 32px;
+  color: #003366;
+}
+
+.stat-card p {
+  color: #777;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.quick-links {
+  display: flex;
+  gap: 14px;
+}
+
+/* ===== Forms ===== */
+.admin-form-box {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.admin-form-box h2 {
+  color: #003366;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.inline-form input,
+.inline-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 160px;
+}
+
+/* ===== Tables ===== */
+.admin-table-box {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.admin-table-box h2 {
+  color: #003366;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background: #f0f4fa;
+  color: #003366;
+}
+
+.thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-available {
+  background: #d4f4dd;
+  color: #1a7a3c;
+}
+
+.badge-unavailable {
+  background: #fbdada;
+  color: #b32424;
+}
+
+.link-edit {
+  color: #b3ad00;
+  margin-right: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-delete {
+  color: #c0392b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.status-form select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
